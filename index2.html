@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class producto {
+            #codigo ;
+            #titulo;
+            #autor;
+
+        constructor (){
+            this.#codigo = "";
+            this.#titulo = "";
+            this.#autor = "";
+
+        }
+
+        set setcodigo(value){
+            this.#codigo = value;
+        }
+         get getcodigo(){
+            return this.#codigo;
+        }
+        set settitulo(value){
+            this.#titulo=value;
+        }
+        get gettitulo(){
+            return this.#titulo;
+        }
+        set setautor (value){
+            this.#autor = value;
+        }
+        get getautor(){
+            return this.#autor;
+        }
+
+        informacion (){
+            console.log (`Hola,mi nombre es  ` + this.getautor + ` soy el autor del titulo ` 
+            + this.gettitulo + ` del codigo ` + this.getcodigo );
+        }
+
+        }
+
+        class ProductoImpreso extends producto{
+            #editorial;
+            #anio;
+            #precio;
+
+            constructor (){
+                super();
+                this.#editorial=``;
+                this.#anio=``;
+                this.#precio= 0;
+            }
+
+            set setEditorial(value){
+                this.#editorial= value;
+            }
+
+            get getEditorial(){
+                return this.#editorial;
+            }
+            set setanio(value){
+                this.#anio=value;
+
+            }
+            get getanio(){
+                return this.#anio;
+            }
+            set setprecio(value){
+                this.#precio = value ;
+            }
+            get getprecio (){
+                return this.#precio;
+            }
+
+            informacion (){
+            console.log (`Hola,mi nombre es  ` + this.getautor + ` soy el autor del titulo ` 
+            + this.gettitulo + ` del codigo ` + this.getcodigo +` el editorial ` + this.getEditorial +
+             ` salio en el año ` + this.getanio + ` y su precio es `+this.getprecio );
+            }
+
+        }
+        
+        class revista extends ProductoImpreso {
+            #volumen;
+
+            constructor (){
+            super();
+            this.#volumen=``;                                                                                                                                              
+            }
+
+            set setVolumen(value){
+                this.#volumen= value;
+            }
+
+            get getVolumen(){
+                return this.#volumen
+            }
+        
+            informacion (){
+            console.log (`Hola,mi nombre es  ` + this.getautor + ` soy el autor del titulo ` 
+            + this.gettitulo + ` del codigo ` + this.getcodigo +` el editorial ` + this.getEditorial +
+             ` salio en el año ` + this.getanio + ` y su precio es `+this.getprecio );
+            }
+
+            estado(){
+             console.log(`Esta revista se encuentra en venta `)
+            }
+    }
+
+        class libro extends  ProductoImpreso {
+            #idioma;
+            
+            constructor (){
+                super();
+                this.idioma=``;
+
+            }
+            set setidioma(value){
+                this.#idioma = value;
+            }
+            get getidioma(){
+                return this.#idioma
+            }
+
+            informacion (){
+                console.log (`Hola,mi nombre es  ` + this.getautor + ` soy el autor del titulo ` 
+            + this.gettitulo + ` del codigo ` + this.getcodigo +` el editorial ` + this.getEditorial +
+             ` salio en el año ` + this.getanio + `, su precio es `+this.getprecio + 'y viene en el idioma  ' + this.idioma );
+
+            }
+            estado(){
+                console.log(`su estado esta en venta`)
+            }
+        }
+
+
+
+        class ProductoGrabado extends producto{
+            #tiempoDuracion;
+            #medioTecnologico;
+
+            constructor(){
+                super();
+                this.#tiempoDuracion= 0 ;
+                this.#medioTecnologico= ``;
+            }
+             set settiempoDuracion(value){
+                this.#tiempoDuracion= value;
+            }
+            get gettiempoDuracion(){
+                return this.#tiempoDuracion
+            }
+            set setmedioTecnologo(value){
+                this.#medioTecnologico= value ;    
+            }
+            get getmedioTecnologo(){
+                return this.#medioTecnologico
+            }
+            informacion (){
+            console.log (`creador del producto:` + this.getautor + ` nombre del producto: ` 
+            + this.gettitulo + `, numero de codigo: ` + this.getcodigo+ `su tiempo de duracion es de:`+this.gettiempoDuracion
+            +` su medio tecnologico es el:`+  this.getmedioTecnologo );
+            }
+
+
+        }
+
+        class productoSofware extends producto{
+            #version;
+            #sistemaOperativo;
+
+            constructor(){
+                super();
+                this.version=``;
+                this.sistemaOperativo =0;
+
+            }
+            set setversion(value){
+                this.#version = value;
+            }
+            get getversion(){
+                return this.#version
+            }
+            set setsistemaOperativo(value){
+                this.#sistemaOperativo= value;
+            }
+            get getsisteemaOperativo(){
+                return this.#sistemaOperativo
+            }
+
+            informacion (){
+            console.log (`creador del producto:` + this.getautor + ` nombre del producto: ` 
+            + this.gettitulo + `, numero de codigo: ` + this.getcodigo + `su version actul es`+ this.version+`nuero de sistema operativo`+ this.sistemaOperativo);
+
+            }
+
+
+        }
+
+        const producto1 = new producto ;
+
+    producto1.setcodigo = `00098`;
+    producto1.settitulo= `tilcars`
+    producto1.setautor=`Ingeniero de sistema`;
+    
+    producto1.informacion();
+
+    const ProductoImpreso1 = new ProductoImpreso ;
+
+    ProductoImpreso1.setcodigo = `00098`;
+    ProductoImpreso1.settitulo= `tilcars`
+    ProductoImpreso1.setautor=`Ingeniero de sistemas`;
+    ProductoImpreso1.setEditorial = `El tiempo`;
+    ProductoImpreso1.setanio =`1987`;
+    ProductoImpreso1.setprecio = 0;
+
+    ProductoImpreso1.informacion();
+    
+    const revista1 = new revista;
+
+    revista1.setcodigo = `00098`;
+    revista1.settitulo= `tilcars`
+    revista1.setautor=`Ingeniero de sistemas`;
+    revista1.setEditorial = `El tiempo`;
+    revista1.setanio =`1987`;
+    revista1.setprecio = 0;
+    revista1.setVolumen = `2`
+
+    revista1.informacion();
+    revista1.estado();
+
+    const libro1 = new libro;
+
+    libro1.setcodigo = `00098`;
+    libro1.settitulo= `tilcars`
+    libro1.setautor=`Ingeniero de sistema`;
+    libro1.setEditorial = `El tiempo`;
+    libro1.setanio =`1987`;
+    libro1.setprecio = 0;
+    libro1.idioma =`Español`;
+    
+    libro1.informacion();
+    libro1.estado();
+
+    const ProductoGrabado1 = new ProductoGrabado;
+
+    ProductoGrabado1.setcodigo = `00098`;
+    ProductoGrabado1.settitulo= `tilcars`
+    ProductoGrabado1.setautor=`Ingeniero de sistema`;
+    ProductoGrabado1.settiempoDuracion = 2;
+    ProductoGrabado1.setmedioTecnologo =`WIFI`;
+
+    ProductoGrabado1.informacion();
+
+    const productoSofware1 = new productoSofware;
+
+    productoSofware1.setcodigo = `00098`;
+    productoSofware1.settitulo= `tilcars`
+    productoSofware1.setautor=`Ingeniero de sistema`;
+    productoSofware1.setversion = `2.0`;
+    productoSofware1.setsistemaOperativo = 302;
+
+    productoSofware1.informacion();
+
+
+
+<a href="about.html">Ir a la página Acerca de</a>
+
+    </script>
+</body>
+</html>
